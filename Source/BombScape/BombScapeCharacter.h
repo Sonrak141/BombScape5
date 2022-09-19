@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "BombScapeCharacter.generated.h"
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPLayerReviceDamage, int, currentLife);
 
 UCLASS(config=Game)
@@ -13,7 +14,7 @@ class ABombScapeCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
+	/** Camera boom positioning the camer a behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
@@ -44,6 +45,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetMaxLife(){return MaxLife;};
+
 
 protected:
 
@@ -87,6 +89,8 @@ protected:
 	int life = 5;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int MaxLife = 5;
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_GetDamageEvent(int Damage);
 
 protected:
 	// APawn interface

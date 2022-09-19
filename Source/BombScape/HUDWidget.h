@@ -14,4 +14,13 @@ class BOMBSCAPE_API UHUDWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
+public:
+	void NativeOnInitialized() override;
+
+protected:
+	void OnPlayerRecivedDamage(int currentLife);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void BP_OnPlayerRecivedDamage(int currentLife);
+
 };

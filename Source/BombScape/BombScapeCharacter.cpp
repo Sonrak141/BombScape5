@@ -96,6 +96,7 @@ void ABombScapeCharacter::GetDamage(int Damage)
 	{
 		this->Destroy();
 	}
+	
 }
 
 void ABombScapeCharacter::Bomb()
@@ -178,3 +179,4 @@ void ABombScapeCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
