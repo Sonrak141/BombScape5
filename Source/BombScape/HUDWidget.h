@@ -18,6 +18,7 @@ public:
 	void NativeOnInitialized() override;
 
 protected:
+	UFUNCTION()
 	void OnPlayerRecivedDamage(int currentLife);
 
 	UFUNCTION(BlueprintImplementableEvent)

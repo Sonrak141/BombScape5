@@ -39,12 +39,16 @@ public:
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnPLayerReviceDamage OnPLayerReviceDamageC;
+	UFUNCTION(BlueprintImplementableEvent)
+		void RestartGame();
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetCurrentLife(){return life;};
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetMaxLife(){return MaxLife;};
+
+	
 
 
 protected:

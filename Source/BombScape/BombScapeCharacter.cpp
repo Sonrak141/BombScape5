@@ -95,6 +95,7 @@ void ABombScapeCharacter::GetDamage(int Damage)
 	if(life <= 0)
 	{
 		this->Destroy();
+		RestartGame();
 	}
 	
 }

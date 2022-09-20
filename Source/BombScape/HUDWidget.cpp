@@ -11,8 +11,10 @@ void UHUDWidget::NativeOnInitialized()
 
 	//con esto puedo obtener el personaje
 	ACharacter* Character = UGameplayStatics::GetPlayerCharacter(this, 0);
-	ABombScapeCharacter* BSCharacter = Cast<ABombScapeCharacter>(Character);
-	BSCharacter->OnPLayerReviceDamageC.AddDynamic(this, &UHUDWidget::OnPlayerRecivedDamage);
+	if (ABombScapeCharacter* BSCharacter = Character ? Cast<ABombScapeCharacter>(Character) : nullptr) {
+		BSCharacter->OnPLayerReviceDamageC.AddDynamic(this, &UHUDWidget::OnPlayerRecivedDamage);
+	}
+	
 }
 
 void UHUDWidget::OnPlayerRecivedDamage(int currentLife)
